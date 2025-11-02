@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+/* 
+@tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* src/app/globals.css — Tailwind v4 style */
+
+/* 1) Load Tailwind */
+@import "tailwindcss";
+
+/* 2) Define design tokens that map to utilities (bg-background, text-muted, etc.) */
+@theme {
+  /* Colors */
+  --color-background: #0b0e13;
+  --color-foreground: #e8ecf1;
+  --color-muted: #96a0ae;
+  --color-primary: #9cc8ff;
+  --color-accent: #b3ffd7;
+
+  /* Typography */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  /* Layout tokens */
+  --container-max: 80rem;
+}
+
+/* 3) Base element styles (plain CSS; no @apply needed) */
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  min-height: 100%;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: underline transparent;
+  text-underline-offset: 2px;
+}
+a:hover { text-decoration-color: currentColor; }
+
+h1, h2, h3 { letter-spacing: -0.01em; }
+
+/* 4) A tiny container utility (v4 way) */
+@utility container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+/* example.css (a CSS module or 3rd-party override file)
+@reference "../../app/globals.css";  /* or: @reference "tailwindcss"; */
+
+/* .select2-dropdown { @apply rounded-lg shadow-md bg-background text-foreground; }
+.select2-search   { @apply border border-white/20 rounded px-2 py-1; } */
