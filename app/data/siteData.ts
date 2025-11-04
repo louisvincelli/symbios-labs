@@ -111,7 +111,7 @@ export const DIVISIONS: Division[] = [
 ];
 
 // ------------------------------
-// Publications (sample content)
+// Publications (content)
 // ------------------------------
 export const PUBLICATIONS: Publication[] = [
   {
